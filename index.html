@@ -1,0 +1,768 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeaneth Jasmine M. Asares | Digital Animation Portfolio</title>
+    <!-- Google Fonts: Inter & Poppins for clean creative typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables - Light Mode (Default Creative Pink & Soft Cream) */
+        :root {
+            --bg-color: #fff8fa;
+            --text-color: #1f1722;
+            --card-bg: #ffffff;
+            --primary-color: #c2185b;
+            --accent-color: #f43f8e;
+            --nav-bg: #18111b;
+            --shadow: 0 6px 18px rgba(194, 24, 91, 0.10);
+            --border-subtle: rgba(244, 63, 142, 0.18);
+        }
+
+        /* Dark Mode Variables (BLACKPINK Inspired Sleek Charcoal & Neon Rose) */
+        body.dark-mode {
+            --bg-color: #110d13;
+            --text-color: #f8eef3;
+            --card-bg: #1d1621;
+            --primary-color: #ff69b4;
+            --accent-color: #ff3385;
+            --nav-bg: #09060a;
+            --shadow: 0 6px 20px rgba(0, 0, 0, 0.55);
+            --border-subtle: rgba(255, 105, 180, 0.25);
+        }
+
+        /* Global Reset & Base Typography */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.65;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            background-color: var(--nav-bg);
+            padding: 1rem 6%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .brand {
+            color: #ffffff;
+        }
+
+        .logo {
+            font-size: 1.35rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            color: #ff69b4;
+        }
+
+        .tagline {
+            font-size: 0.78rem;
+            color: #f5b8d5;
+            margin-top: 2px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            padding: 6px 4px;
+        }
+
+        .nav-links a:hover {
+            color: #ff69b4;
+        }
+
+        .theme-btn {
+            background: var(--accent-color);
+            color: #fff;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.88rem;
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        .theme-btn:hover {
+            background: #d81b60;
+            transform: scale(1.03);
+        }
+
+        /* Hero / Home Section */
+        .hero {
+            padding: 65px 8%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 35px;
+            background: linear-gradient(135deg, rgba(244, 63, 142, 0.12), rgba(194, 24, 91, 0.04));
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .clock-badge {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            box-shadow: 0 3px 10px rgba(194, 24, 91, 0.25);
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2rem, 4vw, 2.85rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero-content span {
+            color: var(--accent-color);
+        }
+
+        .hero-content p {
+            margin-bottom: 26px;
+            font-size: 1.05rem;
+            opacity: 0.92;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 280px;
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 470px;
+            height: auto;
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            border: 3px solid var(--border-subtle);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(244, 63, 142, 0.3);
+        }
+
+        .promo-btn {
+            background-color: #18111b;
+            border: 2px solid var(--accent-color);
+        }
+
+        .promo-btn:hover {
+            background-color: var(--accent-color);
+        }
+
+        /* General Sections & Cards */
+        .section {
+            padding: 65px 8%;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            font-weight: 800;
+            margin-bottom: 14px;
+            color: var(--primary-color);
+        }
+
+        .section-intro {
+            max-width: 740px;
+            margin: 0 auto 28px auto;
+            font-size: 1.03rem;
+        }
+
+        /* Academic & Profile Highlight Pills */
+        .profile-badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 26px;
+        }
+
+        .badge-pill {
+            background: var(--card-bg);
+            border: 1px solid var(--border-subtle);
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            box-shadow: var(--shadow);
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 26px;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--accent-color);
+            border-left: 1px solid var(--border-subtle);
+            border-right: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 1.15rem;
+            color: var(--primary-color);
+        }
+
+        /* Gallery Showcase Cards (3-Item Grid) */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .gallery-card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-subtle);
+            border-top: 4px solid var(--accent-color);
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .gallery-info {
+            padding: 20px;
+        }
+
+        .gallery-info h3 {
+            margin-bottom: 8px;
+            font-size: 1.15rem;
+            color: var(--primary-color);
+        }
+
+        .price {
+            display: inline-block;
+            margin-top: 14px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: rgba(244, 63, 142, 0.12);
+            color: var(--accent-color);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .contact-info, .contact-form {
+            flex: 1;
+            min-width: 280px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-subtle);
+        }
+
+        .contact-info h3, .contact-form h3 {
+            color: var(--primary-color);
+            margin-bottom: 14px;
+            font-size: 1.3rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 12px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-top: 14px;
+            font-weight: 600;
+            font-size: 0.92rem;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 11px 12px;
+            margin-top: 6px;
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-size: 0.95rem;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: 2px solid var(--accent-color);
+            border-color: transparent;
+        }
+
+        .contact-form button {
+            margin-top: 18px;
+            width: 100%;
+        }
+
+        /* Custom Toast / Notification Banner (Replaces native alert) */
+        .toast-banner {
+            position: fixed;
+            bottom: 85px;
+            right: 25px;
+            max-width: 360px;
+            background-color: var(--nav-bg);
+            color: #ffffff;
+            border-left: 5px solid #ff69b4;
+            padding: 16px 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+            z-index: 2000;
+            display: none;
+            animation: slideIn 0.3s ease;
+        }
+
+        .toast-banner.show {
+            display: block;
+        }
+
+        .toast-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            color: #ff69b4;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+
+        .toast-close {
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 1.1rem;
+            cursor: pointer;
+            padding: 0 4px;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Footer & Back to Top */
+        footer {
+            background-color: var(--nav-bg);
+            color: #ffffff;
+            text-align: center;
+            padding: 28px 8%;
+            margin-top: 40px;
+            border-top: 2px solid var(--accent-color);
+        }
+
+        footer p {
+            margin: 6px 0;
+            font-size: 0.95rem;
+        }
+
+        #topButton {
+            display: none;
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+            z-index: 1500;
+            transition: transform 0.2s;
+        }
+
+        #topButton:hover {
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <nav class="navbar">
+            <div class="brand">
+                <div class="logo">🎨 Jeaneth <span>Jasmine</span></div>
+                <div class="tagline">BS EMC – Digital Animation Technology | Bukidnon State University</div>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#services">Hobbies & Interests</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button id="themeBtn" class="theme-btn">🌓 Theme</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HOME / HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div id="clock" class="clock-badge">Loading time...</div>
+            <h1>Hi, I'm <span>Jeaneth Jasmine M. Asares</span></h1>
+            <p>
+                A passionate <strong>Digital Animation Technology</strong> student at 
+                <strong>Bukidnon State University</strong> from Sumpong Purok 9, Malaybalay City, Bukidnon. 
+                Bringing characters to life through traditional sketching, digital art, cartoons, and K-Pop inspiration!
+            </p>
+            <div class="hero-actions">
+                <a href="#services" class="btn">Explore My Hobbies</a>
+                <button id="promoBtn" class="btn promo-btn">💖 Fun Fact & Vibe</button>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img 
+                src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=80" 
+                onerror="this.onerror=null;this.src='https://placehold.co/800x600/18111b/ff69b4?text=Jeaneth+Jasmine+%7C+Digital+Animation';"
+                alt="Digital illustration and sketching workspace">
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section">
+        <h2>About Me</h2>
+
+        <div class="profile-badges">
+            <span class="badge-pill">🎓 Bukidnon State University</span>
+            <span class="badge-pill">🎬 BS EMC – Digital Animation Technology</span>
+            <span class="badge-pill">📍 Sumpong Purok 9, Malaybalay City, Bukidnon</span>
+        </div>
+
+        <p id="aboutText" class="section-intro">
+            Hello! My name is <strong>Jeaneth Jasmine M. Asares</strong>, and I live in 
+            <strong>Sumpong Purok 9, Malaybalay City, Bukidnon</strong>. I am currently pursuing a 
+            <strong>Bachelor of Science in Entertainment, Multimedia and Computing (BSEMC) major in Digital Animation Technology</strong> 
+            at <strong>Bukidnon State University</strong>. My creative journey revolves around visual storytelling—from 
+            rough pencil sketches on paper to vibrant digital illustrations—fueled by classic and modern cartoons 
+            as well as my favorite songs by the members of BLACKPINK.
+        </p>
+        <button id="aboutBtn" class="btn">Show / Hide Bio</button>
+    </section>
+
+    <!-- HOBBIES & INTERESTS SECTION -->
+    <section id="services" class="section">
+        <h2>My Hobbies & Creative Passions</h2>
+        <p class="section-intro">Things that inspire my imagination, art style, and daily student life in Bukidnon.</p>
+
+        <div class="card-container">
+            <div class="card">
+                <h3>1. Traditional Sketching</h3>
+                <p>Drawing character concepts, expressions, and figure studies in my sketchbook using graphite pencils and fine liners.</p>
+                <span class="price">✏️ Pencil & Paper Art</span>
+            </div>
+
+            <div class="card">
+                <h3>2. Digital Drawing</h3>
+                <p>Creating stylized illustrations, vibrant color palettes, and expressive digital paintings tailored for animation projects.</p>
+                <span class="price">🖌️ Digital Illustration</span>
+            </div>
+
+            <div class="card">
+                <h3>3. Watching Cartoons</h3>
+                <p>Analyzing frame-by-frame motion, storytelling, and character personality across animated series and films.</p>
+                <span class="price">📺 Animation Inspiration</span>
+            </div>
+
+            <div class="card">
+                <h3>4. Listening to BLACKPINK Members' Songs</h3>
+                <p>Enjoying solo tracks and group hits from Jisoo, Jennie, Rosé, and Lisa while sketching and working on digital art.</p>
+                <span class="price">🎧 Studio Playlist Vibe</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION (3 SHOWCASE ITEMS) -->
+    <section id="gallery" class="section">
+        <h2>Creative Gallery</h2>
+        <p class="section-intro">A curated trio of my favorite artistic mediums and animation inspirations.</p>
+
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img 
+                    src="22.jpg" 
+                    onerror="this.onerror=null;this.src='https://placehold.co/800x550/18111b/ff69b4?text=Pencil+Sketchbook+Studies';"
+                    alt="Traditional Pencil Sketching">
+                <div class="gallery-info">
+                    <h3>1. Digital art of gehlee</h3>
+                    <p>Digital Drawing, I draw this because I love gehlee, jeolee fan here!.</p>
+                    <span class="price">✏️ Graphite & Ink</span>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img 
+                    src="33.jpg" 
+                    onerror="this.onerror=null;this.src='https://placehold.co/800x550/18111b/ff69b4?text=Digital+Illustration+Art';"
+                    alt="Digital Illustration and Color Study">
+                <div class="gallery-info">
+                    <h3>2. Digital Illustration</h3>
+                    <p>this is just a practice digital drawing, this is my first I drawn in digital.</p>
+                    <span class="price">🖌️ Digital Painting</span>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img 
+                    src="44.jpg" 
+                    onerror="this.onerror=null;this.src='https://placehold.co/800x550/18111b/ff69b4?text=Cartoon+%26+Character+Concept+Art';"
+                    alt="Cartoon and Character Concept Art">
+                <div class="gallery-info">
+                    <h3>3. Cartoon & Character Concept Art</h3>
+                    <p>Original character turnarounds and expressive cartoon poses inspired by animated shows and K-Pop stage concepts.</p>
+                    <span class="price">🎬 Animation Concept</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section">
+        <h2>Personal Info & Connect</h2>
+        <p class="section-intro">Want to collaborate on an animation project, art trade, or creative commission?</p>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Student Profile Details</h3>
+                <p><strong>👤 Full Name:</strong> Jeaneth Jasmine M. Asares</p>
+                <p><strong>🏫 University:</strong> Bukidnon State University (BukSU)</p>
+                <p><strong>🎓 Program:</strong> BS in Entertainment, Multimedia and Computing</p>
+                <p><strong>✨ Major:</strong> Digital Animation Technology</p>
+                <p><strong>📍 Address:</strong> Sumpong Purok 9, Malaybalay City</p>
+                <p><strong>🌄 Province:</strong> Bukidnon, Philippines</p>
+            </div>
+
+            <div class="contact-form">
+                <h3>Send Me a Message</h3>
+                <form id="contactForm">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="4" placeholder="Say hello or share an art/animation idea!" required></textarea>
+
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p><strong>Created by:</strong> Jeaneth Jasmine M. Asares | <strong>Course:</strong> BS EMC – Digital Animation Technology</p>
+        <p>Bukidnon State University • Sumpong Purok 9, Malaybalay City, Bukidnon</p>
+        <p>&copy; 2026 Jeaneth Jasmine M. Asares. All Rights Reserved.</p>
+    </footer>
+
+    <!-- CUSTOM NOTIFICATION BANNER (Replaces browser alert for smooth UX) -->
+    <div id="toastBanner" class="toast-banner" role="status" aria-live="polite">
+        <div class="toast-header">
+            <span id="toastTitle">✨ Notification</span>
+            <button id="toastClose" class="toast-close" aria-label="Close message">&times;</button>
+        </div>
+        <div id="toastBody"></div>
+    </div>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button id="topButton">↑ Top</button>
+
+    <!-- JAVASCRIPT INTERACTIVITY -->
+    <script>
+        // Helper function to show custom floating message box instead of alert()
+        let toastTimeout;
+        function showNotification(title, message) {
+            const toastBanner = document.getElementById("toastBanner");
+            document.getElementById("toastTitle").innerText = title;
+            document.getElementById("toastBody").innerText = message;
+            toastBanner.classList.add("show");
+
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toastBanner.classList.remove("show");
+            }, 5500);
+        }
+
+        document.getElementById("toastClose").addEventListener("click", function() {
+            document.getElementById("toastBanner").classList.remove("show");
+        });
+
+        // 1. Live Clock
+        function updateClock() {
+            const now = new Date();
+            document.getElementById("clock").innerText = "🕒 " + now.toLocaleString();
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // 2. Dark / Light Mode Toggle
+        document.getElementById("themeBtn").addEventListener("click", function() {
+            document.body.classList.toggle("dark-mode");
+            const isDark = document.body.classList.contains("dark-mode");
+            showNotification(
+                isDark ? "🖤💖 Dark Mode Activated" : "🌸 Light Mode Activated",
+                isDark ? "Switched to sleek BLACKPINK-inspired dark studio theme!" : "Switched to soft pastel creative theme!"
+            );
+        });
+
+        // 3. Fun Fact / Creative Vibe Message Button
+        document.getElementById("promoBtn").addEventListener("click", function() {
+            showNotification(
+                "💖 Creative Fun Fact",
+                "Nothing beats sketching characters and animating scenes while listening to BLACKPINK members' solo & group songs on repeat!"
+            );
+        });
+
+        // 4. Show / Hide About Section Bio Text
+        document.getElementById("aboutBtn").addEventListener("click", function() {
+            const aboutText = document.getElementById("aboutText");
+            if (aboutText.style.display === "none") {
+                aboutText.style.display = "block";
+            } else {
+                aboutText.style.display = "none";
+            }
+        });
+
+        // 5. Contact Form Submission Confirmation
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const userName = document.getElementById("name").value;
+            showNotification(
+                "✉️ Message Sent!",
+                "Thank you, " + userName + "! Your message has been received by Jeaneth Jasmine M. Asares."
+            );
+            event.target.reset();
+        });
+
+        // 6. Back to Top Button Visibility & Scroll
+        const topButton = document.getElementById("topButton");
+
+        window.addEventListener("scroll", function() {
+            if (document.documentElement.scrollTop > 250 || document.body.scrollTop > 250) {
+                topButton.style.display = "block";
+            } else {
+                topButton.style.display = "none";
+            }
+        });
+
+        topButton.addEventListener("click", function() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+</body>
+</html>
